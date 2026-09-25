@@ -242,7 +242,7 @@ jQuery(document).ready(function ($) {
     });
 
 
-    function goToByScroll(dataslide) {
+/*     function goToByScroll(dataslide) {
         var goal = $('.slidePoint[data-slide="' + dataslide + '"]').offset().top;
         var goalPx;
         if (mywindow.scrollTop() < goal) {
@@ -253,7 +253,23 @@ jQuery(document).ready(function ($) {
         htmlbody.animate({
             scrollTop: goalPx
         }, 2000, 'easeInOutQuint');
+    } */
+    
+    function goToByScroll(dataslide) {
+        var goal = $('.slidePoint[data-slide="' + dataslide + '"]').offset().top;
+        
+        // On récupère la hauteur du header (ou une valeur fixe de 90px si le script ne trouve pas la balise <header>)
+        var headerHeight = $('header').outerHeight() || 80; 
+        
+        var goalPx = goal - headerHeight;
+        
+        htmlbody.animate({
+            scrollTop: goalPx
+        }, 2000, 'easeInOutQuint');
+        
+        console.log("Fonction de test exécutée ! Cible : " + goal + "px, Ajusté à : " + goalPx + "px");
     }
+
 
     links.click(function (e) {
         e.preventDefault();
