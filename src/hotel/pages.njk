@@ -1,0 +1,23 @@
+---
+pagination:
+  data: hotels
+  size: 1
+  alias: hotel
+permalink: "hotel/{{ hotel.slug }}/index.html"
+eleventyComputed:
+  title: "{{ hotel.title }} - MiniVacs Riviera Maya"
+---
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>{{ hotel.title }} - MiniVacs Riviera Maya</title>
+
+    <meta name="description"
+          content="La mejor oferta de vacaciones para toda la familia el hotel a pie de playa {{ hotel.title }} plan de alimentos todo incluido">
+    <meta name="keywords"
+          content="{{ hotel.title }}, vacaciones, familia, Cancun, Riviera Maya, hoteles, descuentos, ofertas, todo incluido, playa, ">
+    
+    {% include "head-info.html" %}
+
+    {% include "hotel-info.html" %}

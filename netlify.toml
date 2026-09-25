@@ -1,0 +1,78 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[[redirects]]
+  from = "/index.php"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/Pagos/parcialidades.php"
+  to = "/Pagos/parcialidades/"
+  status = 301
+
+[[redirects]]
+  from = "/Pagos/parcialidadesvc.php"
+  to = "/Pagos/parcialidadesvc/"
+  status = 301
+
+[[redirects]]
+  from = "/Pagos/exitoso.php"
+  to = "/Pagos/exitoso/"
+  status = 301
+
+[[redirects]]
+  from = "/Pagos/exitosovc.php"
+  to = "/Pagos/exitosovc/"
+  status = 301
+
+[[redirects]]
+  from = "/infolegales/secturRNT.php"
+  to = "/infolegales/secturRNT/"
+  status = 301
+
+[[redirects]]
+  from = "/contact_form/formulariomandado.php"
+  to = "/contact_form/formulariomandado/"
+  status = 301
+
+[[redirects]]
+  from = "/contact_form/formularioerror.php"
+  to = "/contact_form/formularioerror/"
+  status = 301
+
+[[redirects]]
+  from = "/hotel/:slug/index.php"
+  to = "/hotel/:slug/"
+  status = 301
+
+[[redirects]]
+  from = "/PoliticaConfidencialidad/index.php"
+  to = "/PoliticaConfidencialidad/"
+  status = 301
+
+[[redirects]]
+  from = "/TerminosCondiciones/index.php"
+  to = "/TerminosCondiciones/"
+  status = 301
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/imagenesMVRM/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"

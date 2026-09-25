@@ -1,0 +1,30 @@
+<!--input type="submit" class="contact_btn send_btn" value="Pagar" /-->
+
+<button
+  id="checkout-button-price_1HGFezIKNUCzfCEXblLZfrgD"
+  role="link"
+  type="button"
+>Comprar</button>
+<div id="error-message" style="float:left;"></div>
+<script>
+(function() {
+  var stripe = Stripe('{{ site.stripePublishableKey }}');
+
+  var checkoutButton = document.getElementById('checkout-button-price_1HGFezIKNUCzfCEXblLZfrgD');
+  if (!checkoutButton) return;
+  checkoutButton.addEventListener('click', function () {
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1HGFezIKNUCzfCEXblLZfrgD', quantity: 1}],
+      mode: 'payment',
+      successUrl: '{{ site.stripeSuccessUrl }}',
+      cancelUrl: '{{ site.stripeCancelUrl }}',
+    })
+    .then(function (result) {
+      if (result.error) {
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>

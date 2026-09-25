@@ -1,0 +1,18 @@
+{
+  "parcialidades": [
+    { "label": "100 USD", "code": "1HUh7SIKNUCzfCEXuxyMVySY" },
+    { "label": "150 USD", "code": "1HUhFeIKNUCzfCEXQZ0a7WF5" },
+    { "label": "200 USD", "code": "1HUhIRIKNUCzfCEXn7ljxuZL" },
+    { "label": "300 USD", "code": "1HUhKWIKNUCzfCEXY0B9xXc6" },
+    { "label": "400 USD", "code": "1HUhMnIKNUCzfCEXkBgJqztg" },
+    { "label": "500 USD", "code": "1HUhObIKNUCzfCEXwE02dYAV" }
+  ],
+  "paquetes": [
+    { "label": "1", "code": "1HUpXzIKNUCzfCEXQUb2jvsb" },
+    { "label": "2", "code": "1HUpYcIKNUCzfCEXdQ1FElN2" },
+    { "label": "3", "code": "1HUpZ0IKNUCzfCEXgMstAhUF" },
+    { "label": "4", "code": "1HUpZOIKNUCzfCEXoOU1H1iX" },
+    { "label": "5", "code": "1HUpZsIKNUCzfCEXV6Gxfq9a" },
+    { "label": "6", "code": "1HUpaLIKNUCzfCEXgLn0IXnL" }
+  ]
+}

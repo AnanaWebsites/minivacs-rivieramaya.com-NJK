@@ -1,0 +1,56 @@
+---
+permalink: contact_form/formulariomandado/index.html
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+    <title>Datos Enviados - MiniVacs Riviera Maya</title>
+    <meta name="description"
+          content="Datos Enviados. Nos comunicamos en breve para las mejores ofertas de vacaciones para toda la familia en Cancún y Riviera Maya en hoteles plan de alimentos todo incluido a pie de playa ">
+    <meta name="keywords"
+          content="vacaciones, familia, Cancun, Riviera Maya, hoteles, descuentos, ofertas, todo incluido, playa, ">
+    {% include "head-info.html" %}
+        
+    <style>
+        .foot_block_intouch li{margin-bottom: 0;}
+        .flex-wrapper {
+          display: flex;
+          min-height: 80vh;
+          flex-direction: column;
+          justify-content: space-between
+        }
+        #checkicon{margin:50px 0;height:250px;}
+        
+        @media screen and (max-width : 480px) {
+            #checkicon{margin:50px 0;height:150px;}
+        }
+    
+    </style>
+
+</head>
+    <body>
+        <div class="menu-top slidePoint">	
+            <div class="container clearfix">
+               {% include "menu-info.html" %}
+            </div>
+        </div>
+        <div id="tampontop"></div>
+        <div class="container clearfix flex-wrapper">
+            <div class="grid_12 info-footer-img" style="text-align:center;">
+                <img id="checkicon" src="/imagenesMVRM/iconos/check-icon-png-512_512.png">
+                <br>
+                <h3>Sus datos fueron enviados. Nos comunicamos en breve.</h3>
+                <button onclick="document.location='{{ prefix }}'">OK</button>
+            </div>     
+        </div>
+    <div id="footer">
+        <div class="container clearfix">
+            {% include "footer-info.html" %}
+        </div>
+    </div>
+   
+    </body>
+</html>

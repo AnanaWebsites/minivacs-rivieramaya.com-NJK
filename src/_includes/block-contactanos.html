@@ -1,0 +1,58 @@
+            <div class="grid_12 tit_contact">
+                <h1><span>Contactanos</span></h1>
+                <h2></h2>
+            </div>
+            <div class="clear"></div>
+
+            <div class="grid_4 serv_block_contact form_contact" >
+                <img class="icon_img" src="/images/icon5.jpg" alt=""/>
+                <h4>Formulario</h4>
+                <div class="clear"></div>
+                <div class="contact_form">  
+                    <div id="note"></div>
+                    <div id="fields">
+                        <form id="ajax-contact-form" name="contact" method="POST" action="/contact_form/formulariomandado/" data-netlify="true" netlify-honeypot="bot-field">
+                            <p style="display:none">
+                                <label>No completar: <input name="bot-field"></label>
+                            </p>
+                            <input type="hidden" name="form-name" value="contact"/>
+                            <input type="hidden" name="urlpage" id="urlpage" value=""/>
+                            <input type="text" name="name" value="" placeholder="Nombre*" required />
+                            <input type="text" name="telefono" value="" placeholder="Teléfono 10 dígitos*" required pattern="[0-9]{10}" />
+                            <input type="email" name="email" value="" placeholder="Email*" required />
+                            <textarea name="message" id="message" placeholder="Mensaje"></textarea>
+                            <div class="clear"></div>
+                            <input type="reset" class="contact_btn" value="Reiniciar" />
+                            <input type="submit" class="contact_btn send_btn" value="Enviar" />
+                            <div class="clear"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="grid_4 contact_det_block serv_block_contact details_contact">
+                <img class="icon_img" src="/images/icon4.jpg" alt=""/>
+                <h4>Mas Contactos</h4>
+                <div class="clear"></div>
+                <ul class="foot_block_intouch">
+                    <li class="touch_clock"><p>Lu - Vie 11:00am - 6:00 pm</p></li>                  
+                    <li class="touch_phone"><a href="tel:00529988483149">(+52) 998.848.3149</a></li>
+                    <li class="touch_whatsapp "><a href="https://api.whatsapp.com/send?phone=5219983476226&text=Vi-su-pagina-minivacs-rivieramaya.com-y-quiero-mas-Informacion">+521.9983476226</a></li>
+                    <li class="facebook"><a href="https://www.facebook.com/minivacsrivieramaya">facebook/minivacsrivieramaya</a></li>
+                    <li><p style="color:white">social media</p></li> 
+                    <li><br><br></li>
+                </ul>
+            </div>
+            <div class="grid_4 contact_det_block serv_block_contact omega">
+                <img class="icon_img" src="/images/icon6.jpg" alt=""/>
+                <h4>Nosotros</h4>
+                <div class="clear"></div>
+                <p>Qué es un paquete minivac? Los clubes vacacionales de los hoteles subsidian el precio regular de una estancia 5D/4N para que familias cumpliendo con perfiles específicos vengan a conocer las ventajas de su programa vacacional.</p>
+                <p>Minivacs Riviera Maya pone al alcance éstas promociones REALES con términos y condiciones claros para la tranquilidad y confianza de nuestros clientes. Las mejores vacaciones al mejor precio.</p>
+            </div>
+            <div class="clear"></div>
+            <script>
+            (function () {
+              var field = document.getElementById("urlpage");
+              if (field) field.value = window.location.pathname;
+            })();
+            </script>

@@ -1,0 +1,135 @@
+---
+permalink: Pagos/parcialidadesvc/index.html
+title: Pagos
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+    <title>Pagos</title>
+    <meta name="description"
+          content="Las mejores ofertas de vacaciones para toda la familia en Cancún y Riviera Maya en hoteles plan de alimentos todo incluido a pie de playa ">
+    <meta name="keywords"
+          content="vacaciones, familia, Cancun, Riviera Maya, hoteles, descuentos, ofertas, todo incluido, playa, ">
+    {% include "head-info.html" %}
+    <link rel="shortcut icon" type="imagenes/x-icon" href="https://www.vacacionandocancun.com/wwwoutils/imagenes/iconos/favicon.ico">
+    <!-- SCRIPTS TOP -->
+    <script src="https://js.stripe.com/v3"></script>    
+    
+    <style>
+        body {background-color: #fff;}
+        .container {text-align:center;margin-top:50px;}
+        .container .row{margin-right:unset; margin-left:unset;}
+        .container h2 {
+            color: gold;
+            text-shadow: 1px 1px #555, -1px 1px #555, 1px -1px #555, -1px -1px #555, 1px 1px 5px #555;
+            margin-bottom: 20px;
+            font-size: 35px;
+            line-height: 35px;
+            font-family: 'Roboto', sans-serif;
+            text-transform: none;
+            font-weight: 300;
+        }
+        
+        #cubypay {float:left;margin: 20px 10px;height:120px;width:100px;background-color:aqua;border: 3px solid blue;text-align:center;font-size:30px;line-height:36px;box-sizing: border-box;}
+        
+        .striputon {
+         background-color:#6772E5;
+         color:#FFF;
+         padding: 0 12px;
+         margin:8px 0 0 0;
+         border:0;
+         border-radius:4px;
+         font-size:14px;
+         font-weight:bold;
+         line-height: 30px;
+         min-height: 30px;
+         background-image: -webkit-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+         background-image: -moz-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+         background-image: -ms-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+         background-image: -o-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+         background-image: -webkit-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+         background-image: -moz-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+         background-image: -ms-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+         background-image: -o-linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+         background-image: linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+         text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+         -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+         -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+         -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+         -o-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+         box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+         -webkit-border-radius: 4px;
+         -moz-border-radius: 4px;
+         -ms-border-radius: 4px;
+         -o-border-radius: 4px;
+        }
+        @media(min-width:1200px){
+            .container{max-width:1164px;} 
+            #cubypay {margin:20px 47px;}
+        }
+        @media(min-width:992px){
+            .container{max-width:960px;width: unset;} 
+            #cubypay {margin:20px 30px;}
+        }
+        @media(min-width:768px){
+            .container{max-width:757px;width: unset;} 
+            #cubypay {margin:20px 13px;}
+        }
+        @media(max-width:767px){
+            .container{max-width:420px;padding-left: 10px;padding-right: 10px;box-sizing: border-box;} 
+            #cubypay {margin:20px 16px;}            
+        }
+        @media screen and (max-width:480px){
+            .container{width:326px;} 
+            .container h2 {font-size: 26px;line-height: 26px;}            
+            #cubypay {margin:20px 1px;}  
+        }
+    
+    </style>
+
+</head>
+    <body>
+        <div class="container clearfix flex-wrapper">
+            <h2>PARCIALIDADES<b></b></h2>
+            <div class="row recent_posts">
+                {% for pago in pagosvc.parcialidades %}
+                            <div id="cubypay">
+                                <span>{{ pago.label }}</span><br>
+                                <button class="striputon" id="checkout-button-price_{{ pago.code }}" role="link" type="button">
+                                  Pagar
+                                </button>
+                                <div id="error-message"></div>
+                            {% set buttonId = "checkout-button-price_" + pago.code %}
+                            {% set priceId = "price_" + pago.code %}
+                            {% set successUrl = site.stripeVcSuccessUrl %}
+                            {% set cancelUrl = site.stripeVcCancelUrl %}
+                            {% include "stripe-installment.html" %}
+                            </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="tampontop"></div>
+        <div class="container clearfix flex-wrapper">
+            <h2>PAQUETES<b></b></h2>
+            <div class="row recent_posts">
+                {% for paquete in pagosvc.paquetes %}
+                            <div id="cubypay">
+                                <span>PAQ<br>{{ paquete.label }}</span><br>
+                                <button class="striputon" id="checkout-button-price_{{ paquete.code }}" role="link" type="button">
+                                  Pagar
+                                </button>
+                                <div id="error-message"></div>
+                            {% set buttonId = "checkout-button-price_" + paquete.code %}
+                            {% set priceId = "price_" + paquete.code %}
+                            {% set successUrl = site.stripeVcSuccessUrl %}
+                            {% set cancelUrl = site.stripeVcCancelUrl %}
+                            {% include "stripe-installment.html" %}
+                            </div>
+                {% endfor %}
+            </div>
+        </div>        
+    </body>
+</html>

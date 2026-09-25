@@ -1,0 +1,85 @@
+---
+permalink: contact_form/formularioerror/index.html
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+    <title>Error de Datos Formulario - MiniVacs Riviera Maya</title>
+    <meta name="description"
+          content="Datos Erroneos. Gracias por corregirlas. las mejores ofertas de vacaciones para toda la familia en Cancún y Riviera Maya en hoteles plan de alimentos todo incluido a pie de playa ">
+    <meta name="keywords"
+          content="vacaciones, familia, Cancun, Riviera Maya, hoteles, descuentos, ofertas, todo incluido, playa, ">
+    {% include "head-info.html" %}
+        
+    <style>
+        .foot_block_intouch li{margin-bottom: 0;}
+        .flex-wrapper {
+          display: flex;
+          min-height: 80vh;
+          flex-direction: column;
+          justify-content: space-between
+        }
+        .form_error{
+            float: none;
+            margin: 0 auto;
+        }
+        .form_error {width:57%;margin-bottom:20px;}
+        .form_error p {color:red;}
+        @media screen and (max-width : 766px) {
+             .form_error {width:100%;}
+        }
+    
+    </style>
+
+</head>
+    <body>
+        <div class="menu-top slidePoint">	
+            <div class="container clearfix">
+               {% include "menu-info.html" %}
+            </div>
+        </div>
+        <div id="tampontop"></div>
+        <div class="container clearfix flex-wrapper">
+            <div class="grid_12 info-footer-img" style="text-align:center;">
+                <br>
+                <h3>Datos incompletos. Ver detalles</h3>
+            </div>  
+            <div class="clear"></div>
+
+            <div class="grid_4 serv_block_contact form_contact form_error" >
+                <img class="icon_img" src="/images/icon5.jpg" alt=""/>
+                <h4>Formulario</h4>
+                <div class="clear"></div>
+                <div class="contact_form">  
+                    <div id="note"></div>
+                    <div id="fields">
+                        <form id="ajax-contact-form" method="post" action="/contact_form/formulariomandado/" data-netlify="true" name="contact">
+                            <input type="hidden" name="form-name" value="contact"/>
+                            <input type="hidden" name="urlpage" id="urlpage" value=""/>
+                            <input type="text" name="name" value="" placeholder="Nombre*" required />
+                            <p></p>
+                            <input type="text" name="telefono" value="" placeholder="Teléfono 10 dígitos*" required pattern="[0-9]{10}" />
+                            <p></p>
+                            <input type="email" name="email" value="" placeholder="Email*" required />
+                            <p></p>
+                            <textarea name="message" id="message" placeholder="Mensaje"></textarea>
+                            <div class="clear"></div>
+                            <input type="submit" class="contact_btn send_btn" value="Enviar" />
+                            <div class="clear"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    <div id="footer">
+        <div class="container clearfix">
+            {% include "footer-info.html" %}
+        </div>
+    </div>
+   
+    </body>
+</html>

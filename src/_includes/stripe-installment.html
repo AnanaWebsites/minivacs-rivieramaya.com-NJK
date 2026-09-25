@@ -1,0 +1,21 @@
+<script>
+(function() {
+  var stripe = Stripe('{{ site.stripePublishableKey }}');
+  var checkoutButton = document.getElementById('{{ buttonId }}');
+  if (!checkoutButton) return;
+  checkoutButton.addEventListener('click', function () {
+    stripe.redirectToCheckout({
+      lineItems: [{price: '{{ priceId }}', quantity: 1}],
+      mode: 'payment',
+      successUrl: '{{ successUrl }}',
+      cancelUrl: '{{ cancelUrl }}',
+    })
+    .then(function (result) {
+      if (result.error) {
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
