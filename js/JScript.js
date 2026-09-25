@@ -251,8 +251,8 @@ jQuery(document).ready(function ($) {
             var headerHeight = $('.menu-top').outerHeight(); 
             // Sécurité : Si le menu n'est pas trouvé (null ou undefined)
             if (headerHeight === null || headerHeight === undefined) {
-                // Valeurs par défaut ajustées : 60px sur mobile, 80px sur desktop
-                headerHeight = window.innerWidth < 768 ? 60 : 80; 
+                // Valeurs par défaut ajustées : 80px sur mobile, 80px sur desktop
+                headerHeight = window.innerWidth < 768 ? 80 : 80; 
             }
             // 4. Soustrait la hauteur exacte
             var goalPx = goal - headerHeight;
@@ -262,51 +262,6 @@ jQuery(document).ready(function ($) {
             }, 2000, 'easeInOutQuint');
         }
     }
-
-/*     function goToByScroll(dataslide) {
-        // 1. Trouve la section cible
-        var targetSection = $('.slidePoint[data-slide="' + dataslide + '"]');
-        if (targetSection.length) {
-            // 2. Calcule la position brute de la section
-            var goal = targetSection.offset().top;
-            // 3. Calcule la hauteur RÉELLE du header à cet instant précis
-            var headerHeight = $('header').outerHeight(); 
-            // Sécurité : Si le header n'est pas trouvé, on applique une valeur moyenne par défaut
-            if (!headerHeight) {
-                headerHeight = window.innerWidth < 768 ? 80 : 80; // 80px sur mobile (<768px), sinon 80px
-            }
-            // 4. Soustrait la hauteur exacte
-            var goalPx = goal - headerHeight;
-            
-            // 5. Lance l'animation
-            htmlbody.animate({
-                scrollTop: goalPx
-            }, 2000, 'easeInOutQuint');
-        }
-    }
- */
-/*     function goToByScroll(dataslide) {
-    var targetSection = $('.slidePoint[data-slide="' + dataslide + '"]');
-    if (targetSection.length) {
-        var goal = targetSection.offset().top;
-        var headerHeight = $('header').outerHeight(); 
-
-        // AJOUT D'UN LOG : Pour voir la vraie valeur calculée dans la console (F12)
-        console.log("Hauteur calculée du header :", headerHeight);
-
-        // Sécurité stricte : On n'applique le défaut QUE si headerHeight n'existe pas (null/undefined)
-        if (headerHeight === null || headerHeight === undefined) {
-            // Ajustez ici les vraies valeurs différentes pour mobile/desktop
-            headerHeight = window.innerWidth < 768 ? 60 : 120; 
-        }
-        
-        var goalPx = goal - headerHeight;
-        
-        htmlbody.animate({
-            scrollTop: goalPx
-        }, 2000, 'easeInOutQuint');
-    }
-} */
 
 
     links.click(function (e) {

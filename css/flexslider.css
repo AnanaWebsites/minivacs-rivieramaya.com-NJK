@@ -160,8 +160,58 @@ html[xmlns] .slides {display: block;}
 	background-position: 0 -100px;
 }
 
+/* --- Adaptation pour les téléphones (écrans de moins de 768px) --- */
+@media screen and (max-width: 768px) {
+  
+  /* Configuration commune aux deux flèches sur mobile */
+  .flex-direction-nav .flex-prev,
+  .flex-direction-nav .flex-next {
+    display: block !important;
+    background-image: url(../images/slider_nav.png) !important; /* Utilisation de votre fichier unique */
+    width: 32px !important;         /* Largeur souhaitée sur mobile */
+    height: 32px !important;        /* Hauteur souhaitée sur mobile */
+    margin-top: -16px !important;   /* Centrage vertical (-32px / 2) */
+    
+    /* On définit la taille globale du fichier pour le mobile. 
+       Votre image ayant un ratio carré (largeur = hauteur), si le bloc fait 2 flèches de large (64px), 
+       la hauteur totale du fichier doit aussi être redimensionnée à 64px */
+    background-size: 64px 64px !important; 
+  }
 
+  /* Cadrage de la flèche GAUCHE : tout à gauche (0) et aligné sur le bas (-32px) */
+  .flex-direction-nav .flex-prev {
+    background-position: 0 0 !important;
+  }
 
+  /* Cadrage de la flèche DROITE : décalé à droite (-32px) et aligné sur le bas (-32px) */
+  .flex-direction-nav .flex-next {
+    background-position: -32px 0 !important;
+  }
+
+  /* --- Centrage et correction des images sur mobile --- */
+  /* On ne touche plus aux largeurs globales pour éviter que le slide disparaisse */
+  .flexslider, 
+  .flex-viewport, 
+  .flexslider .slides {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* C'est ici qu'on applique le correctif de symétrie */
+  .flexslider .slides > li img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    
+    /* Force l'image à ignorer un éventuel espace vide induit à gauche */
+    margin: 0 auto !important; 
+    
+    /* Si le conteneur a un léger décalage, cela compense et équilibre l'image */
+    box-sizing: border-box !important;
+  }
+
+}
 
 
 
