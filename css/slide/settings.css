@@ -284,7 +284,7 @@ website:   	http://www.themepunch.com
     .caption.small_text.device.ss3{display:none}
     .caption.small_text.device.ss2{margin-top:30px}
     .caption.small_text.device{line-height: 15px;}
-    .content-ads{font-size: 16px;}
+    .content-slide{font-size: 16px;}
     .caption.small_text.device{width:500px;}
 }
 
@@ -300,8 +300,8 @@ website:   	http://www.themepunch.com
 
 @media only screen and (max-width: 500px) {
     .caption.small_text.device { width: 300px;}
-    .content-ads h3 {font-size: 16px;}
-    .content-ads {font-size: 11px;}
+    .content-slide h3 {font-size: 16px;}
+    .content-slide {font-size: 11px;}
     .caption.small_text.device {line-height: 8px;}
     .caption a{font-size: 11px;}
     .img-slide-con{width: 32%;}

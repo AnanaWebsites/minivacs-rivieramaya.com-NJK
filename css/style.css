@@ -155,12 +155,12 @@ img.icon_img {
 	margin-top:20px;
 	margin-bottom:25px;
 }
-.content-ads h3{
+.content-slide h3{
     font-size: 22px;
     font-weight: 800; 
     margin-top: 0;
 }
-.content-ads{
+.content-slide{
     background:#fff;
     font-family: "Open sans",sans-serif;
     font-size: 20px;
@@ -168,7 +168,7 @@ img.icon_img {
     text-align: center;
     padding:20px;
 }
-.content-ads p {
+.content-slide p {
     text-align: center;
 }
 
